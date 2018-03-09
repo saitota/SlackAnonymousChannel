@@ -1,0 +1,23 @@
+{
+    "ok": true,
+    "ims": [
+        {
+            "id": "Dxxxxxxxx",
+            "created": 1500000000,
+            "is_im": true,
+            "is_org_shared": false,
+            "user": "USLACKBOT",
+            "is_user_deleted": false,
+            "priority": 0
+        },
+        {
+            "id": "Dxxxxxxxx",
+            "created": 1500000000,
+            "is_im": true,
+            "is_org_shared": false,
+            "user": "Uxxxxxxxx",
+            "is_user_deleted": false,
+            "priority": 0
+        }
+    ]
+}

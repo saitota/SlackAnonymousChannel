@@ -1,0 +1,25 @@
+POST https://0x0x0x0x0x.execute-api.ap-northeast-1.amazonaws.com/prod
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+    "token": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+    "team_id": "Txxxxxxxx",
+    "api_app_id": "Axxxxxxxx",
+    "event": {
+        "text": "itisbottestmessage",
+        "username": "testbotA",
+        "bot_id": "Bxxxx",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1500000000.000001",
+        "channel": "Cxxxxxxxx",
+        "event_ts": "1500000000.000001"
+    },
+    "type": "event_callback",
+    "event_id": "Evxxxxxxxx",
+    "event_time": 1500000000,
+    "authed_users": [
+        "Uxxxxxxxx"
+    ]
+}
