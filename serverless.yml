@@ -1,36 +1,25 @@
 service: SlackAnonymousChannel
 provider:
   name: aws
+  #timeout: 90 # seconds
   runtime: python3.6
-  stage: prod
-  region: ap-northeast-1
-  environment:
-    OAUTH_TOKEN: 'xoxp-000000000000-000000000000-000000000000-0x0x0x0x0x0x0x0x0x0x0x0x0x0x0x0x'
-    BOT_TOKEN: 'xoxb-000000000000-0x0x0x0x0x0x0x0x0x0x0x0x'
-    DM_MESSAGE: ':tada: 匿名チャンネル #anonymous へようこそ！ :tada:
-
-まったりと匿名での会話を楽しんでください:sunglasses::sunglasses::sunglasses: 
-
-以下、ご一読ください。
-
-
-```
-チャンネルの仕組み：
-
-- 投稿があると、すぐさま削除され、BOT により再投稿されます
-
-- 見た目上、匿名で発言することができます
-
-ご注意：
-
-- クライアントの `通知` や `削除前のキャッシュ` で投稿者が表示されることがあります
-
-- `API上限` で匿名にならないことがあります
-
-- 万一のトラブルに備えてログは取得しています
-
-- 何か問題が置きましたら 作者 @saitotak にソッコーご連絡ください
-```'
+  stage:  ${opt:stage, self:custom.defaultStage}
+  region: ${opt:region, self:custom.defaultRegion}
+  profile: ${opt:profile, self:custom.defaultProfile}
+custom:
+  defaultStage: dev
+  defaultRegion: ap-northeast-1
+  defaultProfile: default
+  otherfile:
+    environment:
+      dev: ${file(./environment_dev.yml)}
+      prd: ${file(./environment_prd.yml)}
+  alerts: # alert plugin
+    stages:
+      - ${opt:stage, self:custom.defaultStage}
+    alarms:
+      - functionErrors
+      - functionThrottles
 functions:
   fnc:
     handler: main.handler
@@ -38,4 +27,7 @@ functions:
       - http:
           path: /
           method: POST
-
+    environment:
+      ${self:custom.otherfile.environment.${self:provider.stage}}
+plugins:
+  - serverless-plugin-aws-alerts

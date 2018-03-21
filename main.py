@@ -7,6 +7,29 @@ print('Loading function... ')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+
+def event_to_dict(event):
+    if 'body' in event:
+        body = json.loads(event.get('body'))
+        return body
+    elif 'token' in event:
+        body = event
+        return body
+    else:
+        logger.error('unexpected event format')
+        exit
+
+
+class ChallangeJson(object):
+    def data(self, key):
+        return {
+            'isBase64Encoded': 'true',
+            'statusCode': 200,
+            'headers': {},
+            'body': key
+        }
+
+
 def handler(event, context):
     #getenv
     OAUTH_TOKEN = os.environ['OAUTH_TOKEN']
@@ -20,29 +43,17 @@ def handler(event, context):
     #受信したjsonをLogsに出力
     logging.info(json.dumps(event))
 
-    #print (type(event))
-    # json処理
-    if 'body' in event:
-        body = json.loads(event.get('body'))
-    elif 'token' in event:
-        body = event
-    else:
-        logger.error('unexpected event format')
-        return {'statusCode': 500, 'body': 'error:unexpected event format'}
+    # Output the received event to the log
+    logging.info(json.dumps(event))
+    body = event_to_dict(event)
 
-    #url_verificationイベントに返す
+    # return if it was challange-event
     if 'challenge' in body:
-        challenge = body.get('challenge')
-        logging.info('return challenge key %s:', challenge)
-        return {
-            'isBase64Encoded': 'true',
-            'statusCode': 200,
-            'headers': {},
-            'body': challenge
-        }
+        challenge_key = body.get('challenge')
+        logging.info('return challenge key %s:', challenge_key)
+        return ChallangeJson().data(challenge_key)
 
     # API headers
-
     # join だったら DM
     if body.get('event').get('channel') == HOOK_CHANNEL and body.get('event').get('subtype','') == 'channel_join':
         headers_dm = {
