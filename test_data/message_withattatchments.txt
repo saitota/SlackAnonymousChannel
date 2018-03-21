@@ -1,0 +1,46 @@
+{
+    "token": "hXBW9pdwLEz75O55tjCRXQ7i",
+    "team_id": "T50JY1XSB",
+    "api_app_id": "A93NYCTD2",
+    "event": {
+        "type": "message",
+        "deleted_ts": "1521108648.000355",
+        "subtype": "message_deleted",
+        "hidden": true,
+        "channel": "C9G3A9S3B",
+        "previous_message": {
+            "type": "message",
+            "user": "U502C8W4C",
+            "text": "test",
+            "attachments": [
+                {
+                    "fallback": "[March 15th, 2018 7:04 PM] Unknown: 別チャンネルも消えるね",
+                    "ts": "1521108260.000442",
+                    "msg_subtype": "bot_message",
+                    "author_subname": "Unknown",
+                    "channel_id": "C9G3A9S3B",
+                    "channel_name": "anonymous",
+                    "is_msg_unfurl": true,
+                    "text": "別チャンネルも消えるね",
+                    "author_link": "https://mohikanz.slack.com/services/B94K6QHE2",
+                    "mrkdwn_in": [
+                        "text"
+                    ],
+                    "color": "D0D0D0",
+                    "from_url": "https://mohikanz.slack.com/archives/C9G3A9S3B/p1521108260000442",
+                    "is_share": true,
+                    "footer": "Posted in #anonymous"
+                }
+            ],
+            "ts": "1521108648.000355"
+        },
+        "event_ts": "1521108649.000356",
+        "ts": "1521108649.000356"
+    },
+    "type": "event_callback",
+    "event_id": "Ev9PM120RW",
+    "event_time": 1521108649,
+    "authed_users": [
+        "U502C8W4C"
+    ]
+}

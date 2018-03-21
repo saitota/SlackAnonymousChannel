@@ -1,0 +1,50 @@
+OAUTH_TOKEN: 'xoxp-000000000000-000000000000-000000000000-0x0x0x0x0x0x0x0x0x0x0x0x0x0x0x0x'
+BOT_TOKEN: 'xoxb-000000000000-0x0x0x0x0x0x0x0x0x0x0x0x'
+BOT_NAME: 'Unknown'
+HOOK_CHANNEL: 'Cxxxxxxxx'
+BOT_ICON: ':paperbagman:'
+DM_MESSAGE: ':tada: 匿名チャンネル #anonymous へようこそ！ :tada:
+
+まったりと匿名での会話を楽しんでください:sunglasses::sunglasses::sunglasses: 
+
+以下、ご一読ください。
+
+
+
+> チャンネルの仕組み：
+
+> - 投稿があるとすぐさま削除され、BOT により再投稿されます
+
+> - 見た目上、匿名で発言することができます
+
+> ご注意：
+
+> - Slack クライアントの `通知` や `削除前のキャッシュ` で投稿者が表示されることがよくあります
+
+> - `API上限` 等で匿名にならないことがあります
+
+> - 万一のトラブルに備えてログを取得しています
+
+> - 何か問題が起きましたら 作者 @saitotak にご連絡ください
+
+Let''s enjoy conversation anonymously! :sunglasses::sunglasses::sunglasses:
+
+Please read below:
+
+> How the channel works:
+
+> - The post will delete immediately and it will be re-posted by BOT.
+
+> - You can chat here like anonymously.
+
+> Note:
+
+> - Sometimes posts are cache and displayed in `Slack client` or `notification`  before deleting.
+
+> - It may not become anonymous with `API upper limit`  etc.
+
+> - We are collecting logs for possible problems
+
+> - If something goes wrong please contact the author @saitotak
+
+'
