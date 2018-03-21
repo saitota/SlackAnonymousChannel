@@ -1,9 +1,11 @@
-﻿# Slack Anonymous Channel
+﻿# 😎 Slack Anonymous Channel
 It provides Anonymous chat channel at Slack.
 
 ***DEMO:***
 
 ![demo](https://user-images.githubusercontent.com/1152469/37695513-52bd3158-2d13-11e8-8626-dea07e1dd439.gif)
+
+***DEMO-ja:***
 
 ![demo_ja](https://user-images.githubusercontent.com/1152469/37695515-5526551e-2d13-11e8-835d-bcd41861aa60.gif)
 
