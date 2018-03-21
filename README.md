@@ -46,7 +46,7 @@ It provides Anonymous chat channel at Slack.
 
 4. Clone this repo.
 ```
-$ git clone https://github.com/saitota/SlackAnonymousChat.git
+$ git clone https://github.com/saitota/SlackAnonymousChannel.git
 ```
 
 5. Modify environment_dev.yml 's two TOKENs to your token.
@@ -65,7 +65,7 @@ api keys:
 endpoints:
   POST - https://0x0x0x0x0x.execute-api.ap-northeast-1.amazonaws.com/dev/
 functions:
-  fnc: SlackAnonymousChat-dev-fnc
+  fnc: SlackAnonymousChannel-dev-fnc
 ```
 6. Set Slack BOT endpoint and event subscribe settings 
     - Event Subscriptions
